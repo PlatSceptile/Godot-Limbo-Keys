@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://key.png" type="Texture" id=1]
+[ext_resource path="res://Keys.gd" type="Script" id=2]
+[ext_resource path="res://Isolation.mp3" type="AudioStream" id=3]
+[ext_resource path="res://KeyMechanics.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="A1" type="Position2D" parent="."]
+position = Vector2( 683.3, 84.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="B1" type="Position2D" parent="."]
+position = Vector2( 827.3, 84.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="A2" type="Position2D" parent="."]
+position = Vector2( 683.3, 228.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="B2" type="Position2D" parent="."]
+position = Vector2( 827.3, 228.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="A3" type="Position2D" parent="."]
+position = Vector2( 683.3, 372.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="B3" type="Position2D" parent="."]
+position = Vector2( 827.3, 372.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="A4" type="Position2D" parent="."]
+position = Vector2( 683.3, 516.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="B4" type="Position2D" parent="."]
+position = Vector2( 827.3, 516.5 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 683.3, 84.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 827.3, 84.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 683.3, 228.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 827.3, 228.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 683.3, 372.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 827.3, 372.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 683.3, 516.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.0235294, 0.105882, 1 )
+position = Vector2( 827.3, 516.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -60.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Label" type="Label" parent="."]
+margin_left = 59.0
+margin_top = 110.0
+margin_right = 209.0
+margin_bottom = 171.0
+rect_scale = Vector2( 3, 3 )
+text = "FOCUS!!!"
+align = 1
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
